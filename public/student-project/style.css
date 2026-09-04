@@ -1,0 +1,670 @@
+/* 
+========================================================================
+โครงงาน: เว็บไซต์แนะนำสถานที่ท่องเที่ยวจังหวัดสุรินทร์
+ชื่อเว็บไซต์: "เที่ยวสุรินทร์ เมืองช้าง"
+ไฟล์: style.css
+ธีม: เมืองช้างและวัฒนธรรมสุรินทร์ (เขียว, น้ำตาล, ทอง, ครีม)
+Responsive Design รองรับมือถือ แท็บเล็ต และคอมพิวเตอร์
+========================================================================
+*/
+
+:root {
+  --color-primary: #8c5836;       /* น้ำตาลดินเผา/ช้าง */
+  --color-primary-dark: #6e4125;
+  --color-secondary: #2d6a4f;     /* เขียวธรรมชาติ/ป่าไม้ */
+  --color-accent: #d4af37;        /* ทองมรดกวัฒนธรรม */
+  --color-bg: #fcfaf6;            /* ครีมละมุนตา */
+  --color-surface: #ffffff;
+  --color-text-main: #2b2b2b;
+  --color-text-muted: #666666;
+  --color-border: #e8e2d5;
+  --font-heading: 'Kanit', sans-serif;
+  --font-body: 'Sarabun', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, .brand-text {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 1. แถบนำทาง Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+}
+
+.nav-brand strong {
+  color: var(--color-primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+  background-color: #f7f3eb;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--color-text-main);
+}
+
+/* 2. ส่วน Hero */
+.hero {
+  background: linear-gradient(rgba(35, 24, 15, 0.65), rgba(25, 20, 15, 0.8)),
+              url('https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  color: #ffffff;
+  padding: 110px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #261b00;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.02em;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.hero .highlight {
+  color: #f7d070;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #f0eae1;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ปุ่มทั่วไป */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-family: var(--font-heading);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: #f7f3eb;
+}
+
+/* 3. ส่วนค้นหาและกรอง */
+.section-title {
+  text-align: center;
+  margin: 50px 0 25px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  color: #1f1f1f;
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.search-box {
+  max-width: 550px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 45px 14px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: var(--color-primary);
+}
+
+.search-box button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 35px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: #555;
+  transition: all 0.2s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--color-secondary);
+  color: #ffffff;
+  border-color: var(--color-secondary);
+}
+
+/* 4. การ์ดสถานที่ท่องเที่ยว */
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.place-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  border: 1px solid var(--color-border);
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.place-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+}
+
+.card-img-box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #eee;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-category-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255,255,255,0.92);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-fav-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.15s;
+}
+
+.card-fav-btn:hover {
+  transform: scale(1.15);
+}
+
+.card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.card-district {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.card-actions .btn {
+  flex: 1;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 0.85rem;
+}
+
+/* 5. Modal ป๊อปอัป */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--color-surface);
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 1.8rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #777;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+/* 6. ระบบคำนวณงบประมาณ */
+.budget-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.budget-card {
+  background: var(--color-surface);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+}
+
+.input-card label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.input-card input, .input-card select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+
+.result-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.result-card p {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* 7. ทริปของฉัน */
+.mytrip-section {
+  padding: 50px 0;
+  background: #f7f4ed;
+}
+
+.trip-list {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+}
+
+/* 8. แนะนำเส้นทาง Itinerary */
+.itinerary-section {
+  padding: 50px 0;
+}
+
+.itinerary-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.itinerary-tab {
+  padding: 10px 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.itinerary-tab.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.timeline-box {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid var(--color-border);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 25px;
+  border-left: 2px solid var(--color-accent);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.timeline-time {
+  font-weight: bold;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+}
+
+/* 9. รีวิว */
+.reviews-section {
+  padding: 50px 0;
+}
+
+.reviews-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.review-form {
+  background: var(--color-surface);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-form input, .review-form select, .review-form textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.reviews-list {
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+/* 10. ติดต่อเรา */
+.contact-section {
+  padding: 50px 0;
+  background: #f7f4ed;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-info, .contact-form {
+  background: var(--color-surface);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+}
+
+/* 11. Footer */
+.footer {
+  background: #1f1d1a;
+  color: #b0a89d;
+  text-align: center;
+  padding: 35px 20px;
+  margin-top: 50px;
+}
+
+.back-to-top {
+  margin-top: 14px;
+  padding: 8px 18px;
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .budget-grid, .reviews-layout, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+}

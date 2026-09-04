@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เที่ยวสุรินทร์ เมืองช้าง - เว็บไซต์แนะนำสถานที่ท่องเที่ยว</title>
+  <meta name="description" content="โครงงานเว็บไซต์แนะนำสถานที่ท่องเที่ยวจังหวัดสุรินทร์ เสน่ห์เมืองช้าง ธรรมชาติ และอารยธรรมขอม">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- แถบนำทาง Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="logo-icon">🐘</span>
+        <span class="brand-text">เที่ยวสุรินทร์ <strong>เมืองช้าง</strong></span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#hero">หน้าแรก</a>
+        <a href="#places">สถานที่ท่องเที่ยว</a>
+        <a href="#budget">คำนวณงบเที่ยว</a>
+        <a href="#mytrip">ทริปของฉัน (<span id="tripBadge">0</span>)</a>
+        <a href="#itinerary">แนะนำเส้นทาง</a>
+        <a href="#reviews">รีวิว</a>
+        <a href="#favorites">สถานที่โปรด (<span id="favBadge">0</span>)</a>
+        <a href="#contact">ติดต่อเรา</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู">☰</button>
+    </div>
+  </nav>
+
+  <!-- หน้าแรก Hero Section -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">ยินดีต้อนรับสู่แดนอีสานใต้ ถิ่นเมืองช้างใหญ่</div>
+      <h1>เที่ยวสุรินทร์ <span class="highlight">เมืองช้าง</span></h1>
+      <p class="tagline">“ค้นพบเสน่ห์เมืองช้าง สัมผัสธรรมชาติ วัฒนธรรม และประวัติศาสตร์”</p>
+      <div class="hero-buttons">
+        <a href="#places" class="btn btn-primary">ค้นหาสถานที่ท่องเที่ยว</a>
+        <a href="#budget" class="btn btn-secondary">วางแผนการเดินทาง</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ส่วนสถานที่ท่องเที่ยว ค้นหา และกรอง -->
+  <section class="places-section" id="places">
+    <div class="container">
+      <div class="section-title">
+        <h2>สถานที่ท่องเที่ยวแนะนำ</h2>
+        <p>ค้นพบแหล่งท่องเที่ยวธรรมชาติ มรดกขอมโบราณ และวิถีคนกับช้างจังหวัดสุรินทร์</p>
+      </div>
+
+      <!-- ค้นหาแบบ Real-time -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="พิมพ์ชื่อสถานที่, อำเภอ หรือประเภท..." autocomplete="off">
+        <button id="clearSearchBtn" title="ล้างการค้นหา">✕</button>
+      </div>
+
+      <!-- ปุ่มกรองประเภท -->
+      <div class="filter-buttons" id="filterButtons">
+        <button class="filter-btn active" data-category="ทั้งหมด">ทั้งหมด</button>
+        <button class="filter-btn" data-category="ธรรมชาติ">ธรรมชาติ</button>
+        <button class="filter-btn" data-category="ประวัติศาสตร์">ประวัติศาสตร์</button>
+        <button class="filter-btn" data-category="วัฒนธรรม">วัฒนธรรม</button>
+        <button class="filter-btn" data-category="ครอบครัว">ครอบครัว</button>
+        <button class="filter-btn" data-category="จุดชมวิว">จุดชมวิว</button>
+      </div>
+
+      <!-- การ์ดสถานที่ท่องเที่ยว -->
+      <div class="places-grid" id="placesGrid"></div>
+
+      <!-- ข้อความไม่พบ -->
+      <div id="noResults" class="no-results" style="display: none;">
+        <p>ไม่พบสถานที่ที่ค้นหา</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- หน้าต่างรายละเอียดสถานที่ (Modal) -->
+  <div class="modal" id="detailModal">
+    <div class="modal-content" id="modalContent">
+      <button class="close-modal" id="closeModalBtn">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ระบบคำนวณงบประมาณเที่ยว -->
+  <section class="budget-section" id="budget">
+    <div class="container">
+      <div class="section-title">
+        <h2>ระบบวางแผนงบประมาณเที่ยว</h2>
+        <p>คำนวณค่าเดินทาง อาหาร ที่พัก และค่าเข้าชมโดยอัตโนมัติ</p>
+      </div>
+      <div class="budget-grid">
+        <div class="budget-card input-card">
+          <label>จำนวนวันเดินทาง: 
+            <select id="calcDays">
+              <option value="1">1 วัน (เช้า-เย็นกลับ)</option>
+              <option value="2" selected>2 วัน (1 คืน)</option>
+              <option value="3">3 วัน (2 คืน)</option>
+            </select>
+          </label>
+          <label>จำนวนคน: 
+            <input type="number" id="calcPeople" value="2" min="1" max="10">
+          </label>
+          <label>งบประมาณที่คุณตั้งไว้ (บาท): 
+            <input type="number" id="calcBudget" value="4500" min="500" step="500">
+          </label>
+          <button id="recalcBtn" class="btn btn-primary" style="width: 100%; margin-top: 10px;">คำนวณงบประมาณ</button>
+        </div>
+        <div class="budget-card result-card" id="calcResults"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ระบบจัดทริปของฉัน (My Trip) -->
+  <section class="mytrip-section" id="mytrip">
+    <div class="container">
+      <div class="section-title">
+        <h2>ทริปการเดินทางของฉัน</h2>
+        <p>รายการสถานที่ที่คุณเลือกไว้ (จัดเก็บด้วย LocalStorage ในเครื่อง)</p>
+      </div>
+      <div id="myTripList" class="trip-list"></div>
+    </div>
+  </section>
+
+  <!-- แนะนำเส้นทางท่องเที่ยว -->
+  <section class="itinerary-section" id="itinerary">
+    <div class="container">
+      <div class="section-title">
+        <h2>แนะนำเส้นทางท่องเที่ยว</h2>
+        <p>ทริปตัวอย่าง 1 วัน และ 2 วัน พร้อมจัดลำดับเวลา</p>
+      </div>
+      <div class="itinerary-tabs">
+        <button class="itinerary-tab active" id="tabTrip1" onclick="showItinerary(1)">ทริป 1 วัน (ในเมืองสุรินทร์)</button>
+        <button class="itinerary-tab" id="tabTrip2" onclick="showItinerary(2)">ทริป 2 วัน (ในเมือง + ช้างบ้านตากลาง)</button>
+      </div>
+      <div id="itineraryContent" class="timeline-box"></div>
+    </div>
+  </section>
+
+  <!-- สถานที่โปรด Favorites -->
+  <section class="favorites-section" id="favorites" style="padding: 50px 0; background: #fff;">
+    <div class="container">
+      <div class="section-title">
+        <h2>สถานที่โปรดของฉัน ❤️</h2>
+        <p>รายการสถานที่ที่คุณกดบันทึกไว้ในเบราว์เซอร์</p>
+      </div>
+      <div id="favoritesList" class="favorites-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;"></div>
+    </div>
+  </section>
+
+  <!-- ระบบรีวิว -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-title">
+        <h2>รีวิวจากผู้เยี่ยมชม</h2>
+        <p>ให้คะแนนดาวและแลกเปลี่ยนความประทับใจ</p>
+      </div>
+      <div class="reviews-layout">
+        <form id="reviewForm" class="review-form">
+          <h3>เขียนรีวิวของคุณ</h3>
+          <input type="text" id="reviewerName" placeholder="ชื่อของคุณ หรือนามแฝง" required>
+          <select id="reviewPlace" required></select>
+          <select id="reviewRating">
+            <option value="5">⭐⭐⭐⭐⭐ (5 ดาว - ประทับใจมาก)</option>
+            <option value="4">⭐⭐⭐⭐ (4 ดาว - ดีมาก)</option>
+            <option value="3">⭐⭐⭐ (3 ดาว - ปานกลาง)</option>
+            <option value="2">⭐⭐ (2 ดาว - ควรปรับปรุง)</option>
+            <option value="1">⭐ (1 ดาว - ไม่ประทับใจ)</option>
+          </select>
+          <textarea id="reviewComment" placeholder="เขียนความประทับใจหรือคำแนะนำ..." rows="4" required></textarea>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">ส่งรีวิว</button>
+        </form>
+        <div id="reviewsList" class="reviews-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ข้อมูลติดต่อ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>ติดต่อเรา</h2>
+        <p>โครงงานพัฒนาเว็บไซต์แนะนำสถานที่ท่องเที่ยวเพื่อการศึกษา</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>ข้อมูลเว็บไซต์</h3>
+          <p><strong>ชื่อเว็บไซต์:</strong> เที่ยวสุรินทร์ เมืองช้าง</p>
+          <p><strong>จังหวัด:</strong> จังหวัดสุรินทร์</p>
+          <p><strong>Email ตัวอย่าง:</strong> contact@surin-travel.edu</p>
+          <p><strong>Facebook ตัวอย่าง:</strong> facebook.com/SurinTravelEdu</p>
+          <p><strong>Instagram ตัวอย่าง:</strong> @surin_elephant_city</p>
+          <p><strong>สายด่วน ททท. สุรินทร์:</strong> 044-514447</p>
+        </div>
+        <form class="contact-form" onsubmit="alert('ส่งข้อความเรียบร้อย ขอบคุณครับ!'); this.reset(); return false;">
+          <h3>แบบฟอร์มส่งข้อความ</h3>
+          <input type="text" placeholder="ชื่อของคุณ" required>
+          <input type="email" placeholder="Email ของคุณ" required>
+          <textarea placeholder="พิมพ์ข้อความที่นี่..." rows="4" required></textarea>
+          <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ส่วนท้าย Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 5px;">© 2026 เที่ยวสุรินทร์ เมืองช้าง</p>
+      <p style="color: #999; font-size: 0.9rem;">เว็บไซต์จัดทำขึ้นเพื่อการศึกษา (โปรเจกต์นำเสนอสำหรับนักเรียน)</p>
+      <button id="backToTopBtn" class="back-to-top">↑ กลับสู่ด้านบน</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

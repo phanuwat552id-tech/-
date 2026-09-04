@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-natural: #FDFBF7;
+    --surface-natural: #FFFFFF;
+    --surface-sand: #F5F2ED;
+    --border-natural: #E5D5C0;
+    --text-natural: #2D2D2A;
+    --olive-natural: #5A5A40;
+    --gold-natural: #C5A059;
+    --earth-natural: #8B5E3C;
+  }
+
+  body {
+    background-color: #FDFBF7;
+    color: #2D2D2A;
+    font-family: 'Sarabun', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Kanit', sans-serif;
+  }
+}

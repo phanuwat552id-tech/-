@@ -1,0 +1,7 @@
+{
+  "name": "เที่ยวสุรินทร์ เมืองช้าง",
+  "description": "เว็บไซต์แนะนำสถานที่ท่องเที่ยวจังหวัดสุรินทร์ เสน่ห์เมืองช้าง ธรรมชาติ ประวัติศาสตร์ และวัฒนธรรม",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
