@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import { Star, MessageSquare, Send, CheckCircle2, User } from 'lucide-react';
 import { Review, Attraction } from '../types';
 
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+import
 interface ReviewsSectionProps {
   reviews: Review[];
   attractions: Attraction[];
-  onAddReview: (review: Omit<Review, 'id' | 'date'>) => void;
-}
+  onAddReview: (review: Omit<if
+constonstonstonst
+iff (!authorName.trim() || !comment.trim()) return;ff
 
+    // บันทึกคอมเมนต์ลง Supabase
+    const { error } = await supabase.from('comments').insertiff
 export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
   reviews,
   attractions,
@@ -20,24 +25,42 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
   const [hoverRating, setHoverRating] = useState(0);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!authorName.trim() || !comment.trim()) return;
-
-    const selectedPlace = attractions.find(a => a.id === attractionId);
-    const attractionName = selectedPlace ? selectedPlace.name : 'สถานที่ท่องเที่ยวสุรินทร์';
-
-    onAddReview({
-      attractionId,
-      attractionName,
-      authorName: authorName.trim(),
+    const handleSubmit = async (e: React.FormEvent) => {
+          e.preventDefault();
+              if (!authorName.trim() || !comment.trim()) return;
+              
+                  // บันทึกคอมเมนต์ลง Supabase
+                      const { error } = await supabase.from('comments').insert([
+                            {
+                                    name: authorName,
+                                            content: comment,
+                                                    rating: rating,
+                                                            attraction_id: attractionId
+                                                                  }
+                                                                      ]);
+                                                                      
+                                                                          if (error) {
+                                                                                console.error('Error saving comment:', error);
+                                                                                    } else {
+                                                                                          onAddReview({
+                                                                                                  authorName,
+                                                                                                          comment,
+                                                                                                                  rating,
+                                                                                                                          attractionId
+                                                                                                                                });
+                                                                                                                                
+                                                                                                                                      setComment('');
+                                                                                                                                            setShowSuccessToast(true);
+                                                                                                                                                }
+                                                                                                                                                  };
+                                                                                                                                                  ienteateClientateClientteClienteClienteClientntteClienteClientClientlientiententnttifififififf
       rating,
       comment: comment.trim()
     });
 
-    setAuthorName('');
-    setComment('');
-    setRating(5);
+    setAuthorName('');constconstconst
+    setComment('');constconstconstconstconst
+    setRating(5);const
     setShowSuccessToast(true);
 
     setTimeout(() => {
@@ -174,71 +197,4 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-2.5 bg-[#C5A059] hover:bg-[#8B5E3C] text-white font-semibold text-xs sm:text-sm rounded-full shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <Send className="w-3.5 h-3.5" />
-                <span>กดส่งรีวิว</span>
-              </button>
-            </form>
-          </div>
-
-          {/* Right Column: Display Reviews */}
-          <div className="lg:col-span-7 space-y-3.5">
-            <div className="flex items-center justify-between pb-2 border-b border-[#E5D5C0]/70">
-              <h3 className="font-heading font-bold text-base sm:text-lg text-[#5A5A40]">
-                รีวิวล่าสุดจากผู้เยี่ยมชม ({reviews.length} รีวิว)
-              </h3>
-              <span className="text-xs text-[#8B5E3C]">เรียงตามวันที่ล่าสุด</span>
-            </div>
-
-            <div className="space-y-3 max-h-[560px] overflow-y-auto pr-1">
-              {reviews.map((rev) => (
-                <div
-                  key={rev.id}
-                  className="bg-white p-4 rounded-xl border border-[#E5D5C0] shadow-xs space-y-2"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-7 h-7 rounded-full bg-[#5A5A40] text-white flex items-center justify-center font-bold text-xs shrink-0">
-                        <User className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <span className="font-bold text-xs sm:text-sm text-[#2D2D2A] block leading-tight">
-                          {rev.authorName}
-                        </span>
-                        <span className="text-[11px] text-[#8B5E3C] font-medium">
-                          รีวิว: {rev.attractionName}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-0.5">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                          key={star}
-                          className={`w-3 h-3 ${
-                            rev.rating >= star
-                              ? 'text-[#C5A059] fill-[#C5A059]'
-                              : 'text-[#E5D5C0]'
-                          }`}
-                        />
-                      ))}
-                      <span className="text-[10px] text-[#8B5E3C]/70 ml-1.5">{rev.date}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-[#2D2D2A]/80 leading-relaxed pl-9">
-                    “{rev.comment}”
-                  </p>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-  );
-};
+        
