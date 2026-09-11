@@ -131,8 +131,8 @@ export const Hero: React.FC<HeroProps> = ({
                 {/* Main Visual Card */}
                 <div className="relative rounded-2xl overflow-hidden shadow-lg border border-[#E5D5C0] bg-[#5A5A40] group">
                   <img
-                    src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1000&q=80"
-                    alt="ช้างสุรินทร์และวิถีคนเลี้ยงช้าง ศูนย์คชศึกษาบ้านตากลาง"
+                    src="/assets/surin-symbol.jpg"
+                    alt="มหัศจรรย์งานช้างและสัญลักษณ์ประจำจังหวัดสุรินทร์"
                     className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                     referrerPolicy="no-referrer"
@@ -150,10 +150,10 @@ export const Hero: React.FC<HeroProps> = ({
                       <span>🐘 สัญลักษณ์ประจำจังหวัดสุรินทร์</span>
                     </div>
                     <h3 className="font-heading font-bold text-xl text-white">
-                      ศูนย์คชศึกษา บ้านตากลาง
+                      มหัศจรรย์งานช้างสุรินทร์
                     </h3>
                     <p className="text-xs text-[#E5D5C0] mt-1 line-clamp-2">
-                      สัมผัสความน่ารักและความผูกพันอันแน่นแฟ้นระหว่างชาวกูยกับช้างไทย ณ อำเภอท่าตูม
+                      ถิ่นเมืองช้างใหญ่ เอกลักษณ์และสัญลักษณ์แห่งความภาคภูมิใจระดับโลกของชาวสุรินทร์
                     </p>
                   </div>
                 </div>

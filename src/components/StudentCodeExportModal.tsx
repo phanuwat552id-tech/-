@@ -330,7 +330,7 @@ h1, h2, h3, h4, .brand-text {
 /* ส่วน Hero */
 .hero {
   background: linear-gradient(rgba(45, 30, 15, 0.55), rgba(45, 30, 15, 0.7)),
-              url('https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+              url('images/surin-symbol.jpg') center/cover no-repeat;
   color: #ffffff;
   padding: 100px 20px;
   text-align: center;
@@ -608,7 +608,7 @@ const attractionsData = [
     fullDesc: "วนอุทยานพนมสวาย มีเนินเขา 3 ยอด ได้แก่ ยอดเขาชาย ยอดเขาหญิง และยอดเขาคอก ประดิษฐานพระพุทธสุรินทรมงคล และมีบันไดระฆัง 1,080 ใบให้เคาะเพื่อความเป็นสิริมงคล",
     hours: "เปิดทุกวัน 08:30 – 16:30 น.",
     fee: "ไม่มีค่าธรรมเนียมเข้าชม (ฟรี)",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80"
+    image: "images/phanom-sawai.jpg"
   },
   {
     id: "ban-ta-klang",
@@ -619,7 +619,7 @@ const attractionsData = [
     fullDesc: "แหล่งท่องเที่ยวทางวัฒนธรรมที่มีชื่อเสียงระดับโลก ชมการแสดงความฉลาดแสนรู้ของช้าง ป้อนอาหาร และเรียนรู้วิถีชีวิตคนกับช้าง",
     hours: "เปิดทุกวัน 08:30 – 16:30 น.",
     fee: "ผู้ใหญ่ 50 บาท, เด็ก 20 บาท",
-    image: "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=800&q=80"
+    image: "images/ban-ta-klang.png"
   },
   {
     id: "prasat-sikhoraphum",
@@ -630,7 +630,7 @@ const attractionsData = [
     fullDesc: "ปราสาทศิลปะขอมโบราณ สร้างราวพุทธศตวรรษที่ 17 โดดเด่นด้วยทับหลังศิวนาฏราช 10 กร และภาพสลักนางอัปสรถือดอกบัวอันงดงาม",
     hours: "เปิดทุกวัน 07:30 – 18:00 น.",
     fee: "ชาวไทย 10 บาท, ชาวต่างชาติ 50 บาท",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Prasat_Sikhoraphum_01.jpg/1200px-Prasat_Sikhoraphum_01.jpg"
+    image: "images/prasat-sikhoraphum.jpg"
   },
   {
     id: "prasat-chang-pi",
@@ -641,7 +641,7 @@ const attractionsData = [
     fullDesc: "ศาสนสถานประจำสุขศาลาโบราณ 1 ใน 102 แห่ง สร้างด้วยศิลาแลงและหินทราย สะท้อนประวัติศาสตร์การแพทย์และการสาธารณสุขยุคโบราณ",
     hours: "เปิดทุกวัน เวลากลางวัน",
     fee: "ไม่มีค่าธรรมเนียมเข้าชม (ฟรี)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Prasat_Hin_Phanom_Rung_2015.jpg/1200px-Prasat_Hin_Phanom_Rung_2015.jpg"
+    image: "images/prasat-chang-pi.jpg"
   },
   {
     id: "prasat-yai-ngao",
@@ -652,7 +652,7 @@ const attractionsData = [
     fullDesc: "โบราณสถานศิลปะขอม สร้างราวพุทธศตวรรษที่ 17 ก่อด้วยอิฐ 2 องค์บนฐานศิลาแลง บรรยากาศเงียบสงบในอำเภอสังขะ",
     hours: "เปิดทุกวัน เวลากลางวัน",
     fee: "ไม่มีค่าธรรมเนียมเข้าชม (ฟรี)",
-    image: "https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=800&q=80"
+    image: "images/prasat-yai-ngao.png"
   },
   {
     id: "huai-saneng",
@@ -663,10 +663,10 @@ const attractionsData = [
     fullDesc: "ปอดสีเขียวของชาวสุรินทร์ มีสันเขื่อนสำหรับออกกำลังกาย ร้านอาหารริมน้ำ และทัศนียภาพยามเย็นที่งดงาม",
     hours: "เปิดทุกวัน 06:00 – 18:30 น.",
     fee: "ไม่มีค่าธรรมเนียมเข้าชม (ฟรี)",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+    image: "images/huai-saneng.jpg"
   },
   {
-    id: "surin-museum",
+    id: "surin-national-museum",
     name: "พิพิธภัณฑสถานแห่งชาติสุรินทร์",
     district: "อำเภอเมืองสุรินทร์",
     category: "วัฒนธรรม",
@@ -674,7 +674,7 @@ const attractionsData = [
     fullDesc: "แหล่งเรียนรู้ประวัติศาสตร์ โบราณคดี ชาติพันธุ์วิทยาชาวเขมร ลาว กูย และจีน และจัดแสดงผ้าไหมยกทองโบราณ",
     hours: "วันพุธ-อาทิตย์ 09:00 – 16:00 น. (ปิดจันทร์-อังคาร)",
     fee: "ชาวไทย 20 บาท (นักเรียนในเครื่องแบบเข้าชมฟรี)",
-    image: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80"
+    image: "images/surin-national-museum.jpg"
   },
   {
     id: "phraya-surin-monument",
@@ -685,7 +685,29 @@ const attractionsData = [
     fullDesc: "อนุสาวรีย์เจ้าเมืองสุรินทร์คนแรก (เชียงปุ่ม) มือขวาถือของ้าว มือซ้ายถือเคียว ณ วงเวียนทางเข้าเมืองสุรินทร์ด้านใต้",
     hours: "เปิดตลอด 24 ชั่วโมง",
     fee: "ไม่มีค่าธรรมเนียมเข้าชม (ฟรี)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Phraya_Surin_Phakdi_Sri_Narong_Changwang_Monument.jpg/1024px-Phraya_Surin_Phakdi_Sri_Narong_Changwang_Monument.jpg"
+    image: "images/phraya-surin-monument.jpg"
+  },
+  {
+    id: "ban-tha-sawang",
+    name: "หมู่บ้านทอผ้าไหมบ้านท่าสว่าง",
+    district: "อำเภอเมืองสุรินทร์",
+    category: "วัฒนธรรม",
+    shortDesc: "หมู่บ้านทอผ้ายกทองโบราณระดับโลก เอกลักษณ์ผ้าไหมสุรินทร์อันวิจิตรตระการตา",
+    fullDesc: "ชุมชนท่องเที่ยวเชิงหัตถศิลป์ที่มีชื่อเสียงโด่งดังไปทั่วโลก ฟื้นฟูเทคนิคการทอผ้ายกทองชั้นสูงแบบราชสำนักโบราณ",
+    hours: "เปิดทุกวัน 08:30 – 17:00 น.",
+    fee: "ไม่มีค่าธรรมเนียมเข้าชม (ฟรี)",
+    image: "images/ban-tha-sawang.jpg"
+  },
+  {
+    id: "prasat-ban-phluang",
+    name: "ปราสาทบ้านพลวง",
+    district: "อำเภอปราสาท",
+    category: "ประวัติศาสตร์",
+    shortDesc: "อัญมณีปราสาทหินทรายขนาดย่อม ลวดลายแกะสลักพระอินทร์ทรงช้างเอราวัณคมชัดที่สุด",
+    fullDesc: "ปราสาทหินทรายศิลปะบาปวน โดดเด่นด้วยงานแกะสลักหินทรายขาวอมชมพูประณีตคมชัดอย่างยิ่ง",
+    hours: "เปิดทุกวัน 07:30 – 18:00 น.",
+    fee: "ชาวไทย 10 บาท, ชาวต่างชาติ 50 บาท",
+    image: "images/prasat-ban-phluang.jpg"
   }
 ];
 

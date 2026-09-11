@@ -20,7 +20,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'สถูปอัฐิหลวงปู่ดุลย์ อตุโล พระเกจิอาจารย์ชื่อดังสายวิปัสสนา',
       'จุดชมวิวแบบพานอรามา 360 องศา มองเห็นทุ่งนาและผืนป่าสุรินทร์'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/assets/places/phanom-sawai.jpg',
     mapQuery: 'วนอุทยานพนมสวาย สุรินทร์'
   },
   {
@@ -42,7 +42,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'นั่งช้างชมบรรยากาศธรรมชาติริมแม่น้ำมูลและแม่น้ำชี (จุดชมวิววังทะลุ)',
       'พิพิธภัณฑ์ช้าง นิทรรศการองค์ความรู้และโครงกระดูกช้างโบราณ'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/assets/places/ban-ta-klang.png',
     mapQuery: 'ศูนย์คชศึกษา หมู่บ้านช้างบ้านตากลาง สุรินทร์'
   },
   {
@@ -64,7 +64,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'สถาปัตยกรรมปรางค์ 5 ยอดบนฐานศิลาแลงโบราณอันทรงคุณค่า',
       'มุมถ่ายรูปยามเย็นท่ามกลางแสงอาทิตย์สีทองกระทบเนื้ออิฐโบราณ'
     ],
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Prasat_Sikhoraphum_01.jpg/1200px-Prasat_Sikhoraphum_01.jpg',
+    imageUrl: '/assets/places/prasat-sikhoraphum.jpg',
     mapQuery: 'ปราสาทศีขรภูมิ สุรินทร์'
   },
   {
@@ -85,7 +85,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'โครงสร้างศิลาแลงและบรรณาลัยโบราณที่ยังคงโครงสร้างชัดเจน',
       'บรรยากาศเงียบสงบในชุมชนท้องถิ่น เหมาะสำหรับผู้ชื่นชอบโบราณคดี'
     ],
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Prasat_Hin_Phanom_Rung_2015.jpg/1200px-Prasat_Hin_Phanom_Rung_2015.jpg',
+    imageUrl: '/assets/places/prasat-chang-pi.jpg',
     mapQuery: 'ปราสาทช่างปี่ สุรินทร์'
   },
   {
@@ -107,7 +107,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'เรียนรู้ตำนานพื้นบ้านเรื่องเล่าของปราสาทยายเหงา',
       'บรรยากาศร่มรื่นใต้ร่มเงาต้นไม้ใหญ่ เหมาะแก่การศึกษาเชิงอนุรักษ์'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/assets/places/prasat-yai-ngao.png',
     mapQuery: 'ปราสาทยายเหงา สุรินทร์'
   },
   {
@@ -129,7 +129,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'ร้านอาหารริมน้ำ ลิ้มลองปลาเผาและส้มตำรสแซ่บสุรินทร์',
       'พื้นที่ร่มรื่นเหมาะสำหรับพาครอบครัวมาปิกนิกยามบ่าย'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/assets/places/huai-saneng.jpg',
     mapQuery: 'อ่างเก็บน้ำห้วยเสนง สุรินทร์'
   },
   {
@@ -151,7 +151,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'เรียนรู้กำเนิดประเพณีการคล้องช้างและการสืบทอดสายเลือดคชศาสตร์',
       'ห้องจัดแสดงข้าวหอมมะลิสุรินทร์และผ้าไหมยกทองโบราณ'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/assets/places/surin-national-museum.jpg',
     mapQuery: 'พิพิธภัณฑสถานแห่งชาติสุรินทร์'
   },
   {
@@ -173,7 +173,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'จุดเริ่มต้นอันเป็นมงคลก่อนออกเดินทางท่องเที่ยวรอบจังหวัดสุรินทร์',
       'ลานคนเมืองสำหรับกิจกรรมประเพณีและแสงสียามค่ำคืน'
     ],
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Phraya_Surin_Phakdi_Sri_Narong_Changwang_Monument.jpg/1024px-Phraya_Surin_Phakdi_Sri_Narong_Changwang_Monument.jpg',
+    imageUrl: '/assets/places/phraya-surin-monument.jpg',
     mapQuery: 'อนุสาวรีย์พระยาสุรินทรภักดีศรีณรงค์จางวาง สุรินทร์'
   },
   {
@@ -195,7 +195,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'เรียนรู้การย้อมสีไหมด้วยเปลือกไม้และวัสดุธรรมชาติจากป่าชุมชน',
       'เลือกซื้อผ้าไหม ผ้าคลุมไหล่ และของที่ระลึกจากฝีมือชาวบ้านโดยตรง'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/assets/places/ban-tha-sawang.jpg',
     mapQuery: 'หมู่บ้านทอผ้าไหมบ้านท่าสว่าง สุรินทร์'
   },
   {
@@ -217,7 +217,7 @@ export const ATTRACTIONS_DATA: Attraction[] = [
       'ฐานศิลาแลงขนาดใหญ่ที่แสดงถึงแผนผังเดิมที่เตรียมสร้างปรางค์ 3 หลัง',
       'โบราณสถานบูรณะอย่างประณีตท่ามกลางสนามหญ้าเขียวขจี'
     ],
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Prasat_Ban_Phluang.jpg/1200px-Prasat_Ban_Phluang.jpg',
+    imageUrl: '/assets/places/prasat-ban-phluang.jpg',
     mapQuery: 'ปราสาทบ้านพลวง สุรินทร์'
   }
 ];
